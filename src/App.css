@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
+.css-1hdyuqk-MuiPaper-root-MuiAlert-root {
+  font-family: "Poppins", sans-serif !important;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  padding: 0 !important;
+  background-color: #cbd5e0;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+:root {
+  --font-color: #1d1d1d;
+  --color-red: #ff0000;
+  --color-green: #00ff00;
+  --color-blue: #0000ff;
+  --color-grey: #f8f9fa;
+  --color-content: white;
+  --dark-violet: #5e35b1;
+  --light-grayish-violet: #ede7f6;
+  --cyan-blue: #e3f2fd;
+  --white: rgb(255, 255, 255);
+  --strong-blue: #1976d2;
+  --very-dark-gray: #212121;
+  --light-grey: #d3d3d3;
+  --search-background: #fafafa;
+  --input-border-color: #7367f0;
+  --input-border-invalid-color: #ea5455;
+  --container-white-background: rgb(255, 255, 255);
+  --placeholder-color: #ccc;
+  --separator-background: #f7fafe;
+  --separator-color: #10559a;
+  --form-caption-color: rgb(103, 119, 136);
+  --curved-background: #f7faff;
+  --dark-grey: #333333;
+  --medium-grey: #636363;
+  --light-grey: #eeeeee;
+  --ash: #f4f4f4;
+  --primary-color: #2b72fb;
+  --white: white;
+  --header-accordion-btn: #f7fafe;
+  --border: 1px solid #eeeeee;
+  --shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  --light-pink: #fff8f9;
+  --button-bg: rgb(55, 125, 255);
+  --button-bg-color: #0f559a;
+  --load-button-color: #ffe6e5;
+  --disable-button: #cccccc;
+  --disable-button-border: #999999;
+  --disable-button-text-color: #666666;
+  --ship-card-heading: #12569d;
+  --app-background: #e8ecf0;
+  --editor-bg: #f9fbfd;
+  --editor-border-color: #c7c7c7;
+  --input-border-color: rgba(0, 0, 0, 0.12);
+  --placeholder-text-color: #cbd5e0;
+  --published-status-color: #2e7d32;
+  --draft-status-color: #1976d2;
+  --deleted-status-color: #ff0000;
+  --sidebar-color: #fff;
+  --primary-color-light: #f6f5ff;
+  --toggle-color: #ddd;
+  --text-color: #0d0138;
+  --footer-text: #0d0138;
+  --table-header: #000000;
+  --mui-font-family: "Poppins", sans-serif;
+  --spacing-base: 8px;
+  --spacing-small: calc(var(--spacing-base) * 1);
+  --spacing-medium: calc(var(--spacing-base) * 2);
+  --spacing-large: calc(var(--spacing-base) * 3);
+  --spacing-xlarge: calc(var(--spacing-base) * 4);
+  
+  /* ====== Transition ====== */
+  --tran-03: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.3s ease;
+  --tran-05: all 0.5s ease;
 }

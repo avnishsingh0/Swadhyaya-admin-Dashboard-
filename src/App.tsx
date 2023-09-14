@@ -1,12 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router } from "react-router-dom";
+
+//Third party
+
+// Internal imports
+import { ThemeRoutes } from "./routes";
+
+//Style
+import "./App.css";
+import { GlobalContext } from "./context/GlobalContext";
 
 function App() {
   return (
-    <div className="App">
-     Welcome to swadhyaya
-    </div>
+    <GlobalContext>
+      <div className="app-container">
+        <Router>
+          <ThemeRoutes />
+        </Router>
+      </div>
+    </GlobalContext>
   );
 }
 

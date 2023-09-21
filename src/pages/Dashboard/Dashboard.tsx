@@ -1,18 +1,62 @@
 import React from "react";
-import './Dashboard.scss'
+import "./Dashboard.css";
+import { Carousel } from "../../components/Carousel/Carousel";
+import { dashCarousel } from "../../db";
+const data = [11, 25, 22, 85, 95];
 export const Dashboard = () => {
+  const maxDataValue = Math.max(...data);
   return (
     <div className="dashboard-container">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione vitae
-      hic nostrum atque rem reiciendis accusamus provident voluptates? Molestias
-      necessitatibus doloremque consectetur aperiam, sit excepturi unde
-      nesciunt? Veritatis, error facere. Asperiores, earum! Ea reiciendis
-      facilis vitae veniam, quis quasi officiis dicta sapiente voluptates
-      dolorem velit consectetur nemo sed. Possimus maxime unde fuga recusandae
-      dicta libero repudiandae, numquam velit magnam. Veniam.  bus optio dolore
-      asperiores saepe quibusdam nisi itaque voluptate recusandae at veniam amet
-      beatae deserunt iste, molestiae impedit corporis sunt minima, nihil illo
-      expedita. Saepe, velit amet. Voluptatem.
+      <div>
+        <Carousel items={dashCarousel}/>
+      </div>
+      <div className="active-card-container">
+        <div className="active-card">
+          <div>
+            <h6 className="card-heading">Total Active Users</h6>
+            <div className="percent-box">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                aria-hidden="true"
+                role="img"
+                className="component-iconify MuiBox-root css-v0h3dx iconify iconify--solar"
+                width="1em"
+                height="1em"
+                viewBox="0 0 24 24"
+              >
+                <g fill="currentColor">
+                  <path
+                    d="M5 17.75a.75.75 0 0 1-.488-1.32l7-6a.75.75 0 0 1 .976 0l7 6A.75.75 0 0 1 19 17.75H5Z"
+                    opacity=".5"
+                  ></path>
+                  <path
+                    fillRule="evenodd"
+                    d="M4.43 13.488a.75.75 0 0 0 1.058.081L12 7.988l6.512 5.581a.75.75 0 1 0 .976-1.138l-7-6a.75.75 0 0 0-.976 0l-7 6a.75.75 0 0 0-.081 1.057Z"
+                    clipRule="evenodd"
+                  ></path>
+                </g>
+              </svg>
+              <div className="percent-text">+2.6%</div>
+            </div>
+            <h3 className="card-price">18,765</h3>
+          </div>
+          <div>
+            <div className="vertical-bar-graph">
+              {data.map((value, index) => (
+                <div
+                  key={index}
+                  className="bar"
+                  style={{ height: `${(value / maxDataValue) * 100}%` }}
+                >
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="active-card">b</div>
+        <div className="active-card">c</div>
+      </div>
     </div>
   );
 };

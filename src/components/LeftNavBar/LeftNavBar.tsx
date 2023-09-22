@@ -154,7 +154,13 @@ export const LeftNavBar = () => {
                                   : ""
                               }`}
                             >
-                              <PiDotOutlineFill className="child-icon" />
+                              <PiDotOutlineFill
+                                className={`child-icon${
+                                  pathName === "/dashboard"
+                                    ? " child-icon selected-icon"
+                                    : ""
+                                }`}
+                              />
                               <span className="child-text">
                                 {childitem.name}
                               </span>

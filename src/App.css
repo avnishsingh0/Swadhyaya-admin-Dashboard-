@@ -75,4 +75,9 @@ hr {
   --tran-03: all 0.3s ease;
   --tran-04: all 0.3s ease;
   --tran-05: all 0.5s ease;
+
+
+  --Grid-columns: 12;
+  --Grid-columnSpacing: 24px;
+  --Grid-rowSpacing: 24px;
 }

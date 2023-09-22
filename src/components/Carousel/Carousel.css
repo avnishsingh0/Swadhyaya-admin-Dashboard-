@@ -1,93 +1,139 @@
 /* Carousel Container */
 .carousel-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 400px; /* Adjust the height as needed */
-    overflow: hidden;
-    position: relative;
-  }
-  
-  /* Carousel */
-  .carousel {
-    position: relative;
-    width: 400px; /* Adjust the width as needed */
-    height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  
-  /* Carousel Content */
-  .carousel-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    padding: 20px;
-    color: white;
-    text-align: left;
-  }
-  
-  /* Category */
-  .category {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  /* Title */
-  .title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  /* Description */
-  .description {
-    font-size: 14px;
-  }
-  
-  /* Dot Navigation */
-  .dot-navigation {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-  }
-  
-  .dot {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background-color: white;
-    border-radius: 50%;
-    margin-right: 5px;
-    cursor: pointer;
-  }
-  
-  .dot.active {
-    background-color: #f0a500; /* Active dot color */
-  }
-  
-  /* Arrow Navigation */
-  .arrow-navigation {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 20px;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  .prev,
-  .next {
-    margin: 0 5px;
-  }
-  
-  /* Arrow Navigation Hover Effect */
-  .prev:hover,
-  .next:hover {
-    color: #f0a500; /* Arrow color on hover */
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  width: 314px;
+  border-radius: 1rem;
+}
+
+/* Carousel */
+.carousel {
+  position: relative;
+  width: 350px;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.left-side-close-carousel {
+  position: relative;
+  width: 415px;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* Carousel Content */
+.carousel-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  color: white;
+  text-align: left;
+  transition: opacity 5s ease-in-out;
+}
+.carousel-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px;
+  width: 100%;
+  bottom: 0px;
+  z-index: 9;
+  text-align: left;
+  position: absolute;
+  color: rgb(255, 255, 255);
+}
+/* Category */
+.category {
+  margin: 0px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: rgb(255, 193, 172);
+}
+
+/* Title */
+.title {
+  font-size: 20px;
+  margin: 0px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+/* Description */
+.description {
+  margin: 0px;
+  line-height: 1.57143;
+  font-size: 0.875rem;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+/* Dot Navigation */
+.dot-navigation {
+  position: absolute;
+  top: 1rem;
+  left: 20px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: rgb(212, 207, 207);
+  border-radius: 50%;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: rgb(255, 193, 172);
+}
+
+/* Arrow Navigation */
+.arrow-navigation {
+  position: absolute;
+  top: 1rem;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+.carousel-details {
+  position: absolute;
+  bottom: 0;
+  padding: 24px;
+  left: 0;
+  z-index: 0;
+}
+.prev,
+.next {
+  margin: 0 5px;
+}
+.left-arrow,
+.right-arrow {
+  font-size: 20px;
+}
+
+/* Arrow Navigation Hover Effect */
+.prev:hover,
+.next:hover {
+  color: rgb(255, 193, 172);
+}

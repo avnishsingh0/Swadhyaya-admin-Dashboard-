@@ -1,0 +1,169 @@
+.listTable {
+
+    background-color: rgb(255, 255, 255);
+    color: rgb(33, 43, 54);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    background-image: none;
+    overflow: hidden;
+    position: relative;
+    box-shadow: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
+    border-radius: 16px;
+    z-index: 0;
+    width: 95%;
+    margin: 10px auto;
+
+}
+
+.status {
+    display: flex;
+    gap: 50px;
+    padding: 5px 15px;
+}
+
+.status>div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #537381;
+}
+
+.status>div>p:nth-child(2) {
+    /* background-color: black; */
+    color: white;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.All>p:nth-child(2) {
+    color: white;
+    background-color: #212b36;
+}
+
+.Active>p:nth-child(2) {
+    color: #118D57;
+    background-color: #22c55e29;
+}
+
+.Pending>p:nth-child(2) {
+    color: #B76E00;
+    background-color: #ffab0029;
+}
+
+.Banned>p:nth-child(2) {
+    color: #B71D18;
+    background-color: #ff563029;
+}
+
+.Rejected>p:nth-child(2) {
+    color: #637381;
+    background-color: #919eab29;
+}
+
+.sort {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border: 1px solid #e9ecee;
+}
+
+.sort>div {
+    width: 16%;
+}
+
+.sort>div>button {
+    width: 100%;
+    border-radius: 10px;
+    padding: 15px 40px;
+    border: 1px solid #e9ecee;
+    background-color: white;
+    text-align: left;
+}
+
+.sort>div>button:hover {
+    border: 1px solid black;
+}
+
+.dropdownContent {
+    /* border: 1px solid red; */
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 16%;
+    z-index: 100;
+    /* opacity: 1;
+    transform: none;
+    transition: opacity 294ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 196ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transform-origin: 127.5px 0px; */
+}
+
+.dropdownContent label {
+    /* border: 1px solid red; */
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    /* flex-direction: column; */
+}
+
+.sort>input {
+    width: 80%;
+    border-radius: 10px;
+    padding: 15px 10px;
+    border: 1px solid #e9ecee;
+}
+
+.sort>input:hover {
+    border: 1px solid black;
+}
+
+
+/* --------------------------------------------------------------------------------------------------------------- */
+/* USER TABLE */
+/* --------------------------------------------------------------------------------------------------------------- */
+
+
+table {
+    width: 100%;
+    /* border: 1px solid red; */
+}
+
+thead {
+    background-color: #f4f6f8;
+}
+
+thead>tr>th {
+    padding: 20px 15px;
+    text-align: left;
+}
+
+tbody>tr>td {
+    border-bottom: 1px solid #f4f6f8;
+    padding: 15px;
+
+}
+
+tbody>tr>td:nth-child(2) {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* tbody>tr>td:nth-child(1)>div{
+    border: 1px solid red;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+} */
+tbody>tr>td:nth-child(2)>img {
+    border-radius: 50%;
+    width: 8%;
+}

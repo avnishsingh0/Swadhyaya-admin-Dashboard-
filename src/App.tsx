@@ -8,7 +8,9 @@ import { ThemeRoutes } from "./routes";
 //Style
 import "./App.css";
 import { GlobalContext } from "./context/GlobalContext";
-
+import { CategoryScale } from "chart.js";
+import Chart from "chart.js/auto";
+Chart.register(CategoryScale);
 function App() {
   return (
     <GlobalContext>

@@ -105,7 +105,6 @@ export const LeftNavBar = () => {
               </Link>
             </li>
             {menuItems.map((item, index) => {
-              console.log(item);
               return (
                 <div key={index + "" + item}>
                   <li
@@ -156,8 +155,8 @@ export const LeftNavBar = () => {
                             >
                               <PiDotOutlineFill
                                 className={`child-icon${
-                                  pathName === "/dashboard"
-                                    ? " child-icon selected-icon"
+                                  pathName === `${childitem.routeInfo}`
+                                    ? " child-icon selected-icon-child"
                                     : ""
                                 }`}
                               />

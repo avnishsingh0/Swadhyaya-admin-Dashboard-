@@ -217,6 +217,10 @@
 .selected-link:hover {
   background-color: rgba(255, 48, 48, 0.16) !important;
 }
+.selected-icon-child {
+  color: rgb(255, 48, 48) !important;
+  font-size: 20px;
+}
 /* Menu bar styles */
 .sidebar .menu-bar {
   height: calc(100% - 55px);

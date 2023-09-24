@@ -1,5 +1,6 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
+import './LineChart.css'
 import { genderDownloads } from "../../db";
 const options = {
   scales: {
@@ -14,7 +15,7 @@ const options = {
 };
 export const LineChart = () => {
   return (
-    <div>
+    <div className="line-chart-container">
       <Line data={genderDownloads} options={options} />
     </div>
   );

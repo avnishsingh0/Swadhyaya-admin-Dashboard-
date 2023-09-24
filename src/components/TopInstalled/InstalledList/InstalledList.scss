@@ -1,0 +1,75 @@
+.installed-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+  }
+  .list-container {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    -webkit-box-align: center;
+    align-items: center;
+  }
+  .installed-country-flag {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    min-width: 120px;
+  }
+  .android {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    min-width: 80px;
+  }
+  .windows {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    min-width: 80px;
+  }
+  .ios {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    min-width: 80px;
+  }
+  .flag-icon {
+    width: 28px;
+    height: 20px;
+    border-radius: 5.2px;
+    margin-right: 8px;
+  }
+  .country-name {
+    margin: 0px;
+    font-weight: 600;
+    line-height: 1.57143;
+    font-size: 0.875rem;
+    font-family: "Public Sans", sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .android-icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    color: rgb(145, 158, 171);
+  }
+  .android-name {
+    margin: 0px;
+    line-height: 1.57143;
+    font-size: 0.875rem;
+    font-family: "Public Sans", sans-serif;
+    font-weight: 400;
+  }
+  .windows-icon{
+      
+  }

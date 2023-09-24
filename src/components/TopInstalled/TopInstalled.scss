@@ -1,0 +1,33 @@
+.top-installed-container {
+  background-color: rgb(255, 255, 255);
+  color: rgb(33, 43, 54);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  background-image: none;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  position: relative;
+  box-shadow: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px,
+    rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
+  border-radius: 16px;
+  z-index: 0;
+  max-width: 313px;
+}
+.top-installed-container:hover{
+  overflow-x: auto;
+
+}
+.top-installed-container::-webkit-scrollbar-thumb {
+  background-color: rgb(99, 115, 129); /* Change the scrollbar thumb color */
+  border-radius: 20px; /* Round the corners of the thumb */
+}
+.top-installed-container::-webkit-scrollbar{
+  height: 7px;
+}
+
+.installed-header {
+  display: flex;
+  align-items: center;
+  padding: 24px 24px 0px;
+  font-size: 1.125rem;
+  font-weight: 600;
+}

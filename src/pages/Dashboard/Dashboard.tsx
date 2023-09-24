@@ -1,9 +1,16 @@
 import React from "react";
 import "./Dashboard.css";
 import { dashCarousel, downloadData } from "../../db";
-import { Carousel, CircularChart, WelcomeUser } from "../../components";
-import { ActiveCard } from "../../components/ActiveCard";
-import { LineChart } from "../../components/LineChart";
+import {
+  ActiveCard,
+  AppDetails,
+  Carousel,
+  CircularChart,
+  LineChart,
+  TopAuthor,
+  TopInstalled,
+  WelcomeUser,
+} from "../../components";
 
 export const Dashboard = () => {
   return (
@@ -19,7 +26,14 @@ export const Dashboard = () => {
       </div>
       <div className="chart-container">
         <CircularChart data={downloadData} />
-        {/* <LineChart /> */}
+        <LineChart />
+      </div>
+      <div className="country-author">
+        <TopInstalled />
+        <TopInstalled />
+        <div className="app-details">
+          <AppDetails percentage={38} totalCount={10000}/>
+        </div>
       </div>
     </div>
   );

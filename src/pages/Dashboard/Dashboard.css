@@ -1,9 +1,9 @@
-.dashboard-container{
-    /* margin-top: 15px; */
-    padding: 1rem;
+.dashboard-container {
+  /* margin-top: 15px; */
+  padding: 1rem;
 }
-.dashboard-top-section{
-  display: flex;  
+.dashboard-top-section {
+  display: flex;
   margin: auto;
   gap: 1rem;
 }
@@ -24,12 +24,20 @@
   margin-top: 1rem;
 }
 
-
-
-.chart-container{
+.chart-container {
   display: flex;
   width: 100%;
+  margin-top: 1rem;
+  gap: 1rem;
 }
-/* .chart-container> :first-child{
-  border: 1px solid red;
-} */
+.chart-container > :last-child {
+  flex: 1;
+}
+.country-author {
+  display: flex;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+.app-details{
+  flex: 1;
+}

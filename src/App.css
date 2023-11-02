@@ -12,6 +12,7 @@ hr {
   --font-color: #1d1d1d;
   --color-red: #ff0000;
   --color-green: #00ff00;
+  --color-black:black;
   --color-blue: #0000ff;
   --color-grey: #f8f9fa;
   --color-content: white;
@@ -69,13 +70,16 @@ hr {
   --spacing-medium: calc(var(--spacing-base) * 2);
   --spacing-large: calc(var(--spacing-base) * 3);
   --spacing-xlarge: calc(var(--spacing-base) * 4);
-  
+
+  /* ====== Button ====== */
+  --button-background-color: rgb(33, 43, 54);
+  --button-hover-color: rgb(69, 79, 91);
+
   /* ====== Transition ====== */
   --tran-03: all 0.2s ease;
   --tran-03: all 0.3s ease;
   --tran-04: all 0.3s ease;
   --tran-05: all 0.5s ease;
-
 
   --Grid-columns: 12;
   --Grid-columnSpacing: 24px;

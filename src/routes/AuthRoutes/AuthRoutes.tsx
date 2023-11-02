@@ -9,6 +9,14 @@ const SignIn = Loadable(
     }))
   )
 );
+const ForgetPassword = Loadable(
+  lazy(() =>
+    import("../../pages/Auth").then((module) => ({
+      default: module.ForgetPassword,
+    }))
+  )
+);
+
 
 // ==============================|| AUTHENTICATION ROUTING ||============================== //
 
@@ -19,6 +27,10 @@ export const AuthRoutes = {
     {
       path: "/",
       element: <SignIn />,
+    },
+    {
+      path: "/forget-password",
+      element: <ForgetPassword />,
     },
   ],
 };

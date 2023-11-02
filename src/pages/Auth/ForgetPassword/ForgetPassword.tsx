@@ -147,7 +147,7 @@ export const ForgetPassword = () => {
               </defs>
             </svg>
             <div className="forget-header-container">
-              <h3 className="forget-header">Forgot your password?</h3>
+              <h3 className="forget-header">Set new password?</h3>
               <p className="forget-sub-heading">
                 Please enter the email address associated with your account and
                 We will email you a link to reset your password.
@@ -157,7 +157,7 @@ export const ForgetPassword = () => {
               <TextField name="email" label="Enter new password" fullWidth />
               <TextField
                 name="email"
-                label="Enter confirm password"
+                label="Re-enter new password"
                 fullWidth
               />
               <LoadingButton
@@ -167,7 +167,7 @@ export const ForgetPassword = () => {
                 variant="contained"
                 className="submit-btn"
               >
-                Change password
+                Submit
                 <span className="btn-icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

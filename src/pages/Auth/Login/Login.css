@@ -1,84 +1,111 @@
-/* General styles */
-.page-container {
+.login-container {
   display: flex;
-  flex-direction: row;
   min-height: 100vh;
+  position: relative;
 }
 
-.logo {
-  margin: 0;
-  font: inherit;
-  color: rgb(0, 167, 111);
-  text-decoration: none;
-  display: contents;
-}
-
-/* Left container styles */
-.left-content {
-  width: 70%;
+.left-container {
+  padding-left: 4rem;
+  padding-right: 4rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5vw; 
-  background: linear-gradient(
-    rgba(255, 255, 255, 0.88),
-    rgba(255, 255, 255, 0.88)
-  ) center center / cover no-repeat,
-  url(https://minimals.cc/assets/background/overlay_2.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.header-text {
-  font-size: 1.5rem; 
-  font-weight: 700;
-  max-width: 30rem; 
-  text-align: center;
-}
-
-.image {
-  max-width: 45vw; /* Converted from 720px to vw */
-}
-
-/* Right container styles */
-.right-content {
-  display: flex;
-  flex-direction: column;
-  width: 30%;
-  margin: 0 auto;
-  max-width: 30rem; /* Converted from 480px to rem */
-  padding: 10rem 4rem 0; /* Converted from pixel values to rem and vw */
-  background-color: #ee5d5d;
-}
-
-.title {
-  font-size: 1.5rem; /* No changes */
-}
-
-.filled-alert {
-  background-color: rgb(202, 253, 245) !important;
-  color: black;
-}
-
-.input-field {
-  font-weight: 400;
-  color: rgb(33, 43, 54);
   width: 100%;
-  border-radius: 0.8rem; /* Converted from 8px to rem */
-  margin-top: 2vh; /* Converted from 20px to vh */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 480px;
 }
 
-.login-button {
-  margin-top: 2vh; /* Converted from 20px to vh */
-  background-color: rgb(33, 43, 54);
+.logo-container {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  width: 15rem;
 }
 
-/* Modify this part if needed */
-.outlined-input.Mui-focused .notched-outline {
-  border-color: rgb(33, 43, 54);
+.swadhyaya-logo {
+  width: 100%;
 }
 
-.label {
-  color: red !important;
+.form-box-container {
+  padding: 0px;
+  box-shadow: none;
+  overflow: unset;
+  background-color: var(--white);
+}
+
+.form-top {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 40px;
+}
+
+.form-heading {
+  font-size: 1.5rem;
+}
+
+.form-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.forgot-link {
+  margin: 0px;
+  line-height: 1.57143;
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-decoration: underline;
+  color: inherit;
+  align-self: flex-end;
+}
+
+.submit-btn {
+  display: flex;
+  min-width: 64px;
+  padding: 8px 12px 8px 16px;
+  border-radius: 8px;
+  color: var(--white);
+  background-color: var(--button-background-color);
+  text-transform: capitalize;
+  height: 48px;
+  font-size: 15px;
+  justify-content: space-between;
+  box-shadow: none;
+}
+
+.submit-btn:hover {
+  background-color: var(--button-hover-color);
+  box-shadow: none;
+}
+
+.btn-icon {
+  display: inherit;
+  margin-right: -4px;
+  margin-left: 8px;
+}
+
+.right-container {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  position: relative;
+}
+
+.right-container-img {
+  top: 16px;
+  left: 16px;
+  object-fit: cover;
+  position: absolute;
+  width: calc(100% - 32px);
+  height: calc(100% - 32px);
+}
+
+/* overwrite mui css */
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--button-background-color) !important;
+}
+
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+  color: var(--color-black);
 }

@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // internal imports
-import "./ForgetPassword.css";
 import logo from "../../../resources/swadhyaya-logo.png";
+import style from "./ForgetPassword.module.css";
 
 // import from mui
 import { TextField } from "@mui/material";
@@ -12,24 +12,28 @@ import { LoadingButton } from "@mui/lab";
 export const ForgetPassword = () => {
   return (
     <section>
-      <header className="forget-top-header">
-        <div className="forget-top-box">
-          <Link to={"/"} className="forget-top-logo">
-            <img src={logo} alt="swadhyaya-logo" className="forget-img-logo" />
+      <header className={style.forgetTopHeader}>
+        <div className={style.forgetTopBox}>
+          <Link to={"/"} className={style.forgetTopLogo}>
+            <img
+              src={logo}
+              alt="swadhyaya-logo"
+              className={style.forgetImgLogo}
+            />
           </Link>
-          <Link to={"/"} className="need-help-opt">
+          <Link to={"/"} className={style.needHelpOpt}>
             Need help?
           </Link>
         </div>
       </header>
-      <div className="forget-container">
-        <div className="forget-box">
+      <div className={style.forgetContainer}>
+        <div className={style.forgetBox}>
           <form>
             <svg
               fill="none"
               viewBox="0 0 96 97"
               xmlns="http://www.w3.org/2000/svg"
-              className="forget-svg-icon"
+              className={style.forgetSvgIcon}
             >
               <path
                 fill="#FFD666"
@@ -146,35 +150,30 @@ export const ForgetPassword = () => {
                 </filter>
               </defs>
             </svg>
-            <div className="forget-header-container">
-              <h3 className="forget-header">Set new password?</h3>
-              <p className="forget-sub-heading">
+            <div className={style.forgetHeaderContainer}>
+              <h3 className={style.forgetHeader}>Set new password?</h3>
+              <p className={style.forgetSubHeading}>
                 Please enter the email address associated with your account and
                 We will email you a link to reset your password.
               </p>
             </div>
-            <div className="forget-input-container">
+            <div className={style.forgetInputContainer}>
               <TextField name="email" label="Enter new password" fullWidth />
-              <TextField
-                name="email"
-                label="Re-enter new password"
-                fullWidth
-              />
+              <TextField name="email" label="Re-enter new password" fullWidth />
               <LoadingButton
                 fullWidth
                 size="large"
                 type="submit"
                 variant="contained"
-                className="submit-btn"
+                className={style.submitBtn}
               >
                 Submit
-                <span className="btn-icon">
+                <span className={style.btnIcon}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink"
                     aria-hidden="true"
                     role="img"
-                    className="component-iconify MuiBox-root css-1t9pz9x iconify iconify--eva"
                     width="1em"
                     height="1em"
                     viewBox="0 0 24 24"
@@ -191,7 +190,7 @@ export const ForgetPassword = () => {
                   </svg>
                 </span>
               </LoadingButton>
-              <Link to={"/"} className="retrun-text">
+              <Link to={"/"} className={style.returnText}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   xmlnsXlink="http://www.w3.org/1999/xlink"

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 // internal imports
-import "./Login.css";
+import style from "./Login.module.css";
 import logo from "../../../resources/swadhyaya-logo.png";
 
 // import from mui
@@ -29,17 +29,17 @@ export const Login = () => {
   };
 
   return (
-    <section className="login-container">
-      <div className="left-container">
-        <div className="logo-container">
-          <img src={logo} alt="logo" className="swadhyaya-logo" />
+    <section className={style.loginContainer}>
+      <div className={style.leftContainer}>
+        <div className={style.logoContainer}>
+          <img src={logo} alt="logo" className={style.swadhyayaLogo} />
         </div>
-        <div className="form-box-container">
+        <div className={style.formBoxContainer}>
           <form onSubmit={handleSubmit}>
-            <div className="form-top">
-              <h4 className="form-heading">Sign in to Swadhyaya</h4>
+            <div className={style.formTop}>
+              <h4 className={style.formHeading}>Sign in to Swadhyaya</h4>
             </div>
-            <div className="form-bottom">
+            <div className={style.formBottom}>
               <TextField
                 name="email"
                 label="Email address"
@@ -101,7 +101,7 @@ export const Login = () => {
                   ),
                 }}
               />
-              <Link to={"/forget-password"} className="forgot-link">
+              <Link to={"/forget-password"} className={style.forgotLink}>
                 Forgot password?
               </Link>
               <LoadingButton
@@ -110,10 +110,10 @@ export const Login = () => {
                 type="submit"
                 variant="contained"
                 loading={isSubmitting}
-                className="submit-btn"
+                className={style.submitBtn}
               >
                 Login
-                <span className="btn-icon">
+                <span className={style.btnIcon}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -140,11 +140,11 @@ export const Login = () => {
           </form>
         </div>
       </div>
-      <div className="right-container">
+      <div className={style.rightContainer}>
         <img
           src="https://minimals.cc/assets/background/overlay_3.jpg"
           alt="swadhyaya-img"
-          className="right-container-img"
+          className={style.rightContainerImg}
         />
       </div>
     </section>

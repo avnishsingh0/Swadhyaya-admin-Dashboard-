@@ -1,10 +1,10 @@
-.login-container {
+.loginContainer {
   display: flex;
   min-height: 100vh;
   position: relative;
 }
 
-.left-container {
+.leftContainer {
   padding-left: 4rem;
   padding-right: 4rem;
   display: flex;
@@ -15,41 +15,41 @@
   max-width: 480px;
 }
 
-.logo-container {
+.logoContainer {
   margin-top: 4rem;
   margin-bottom: 4rem;
   width: 15rem;
 }
 
-.swadhyaya-logo {
+.swadhyayaLogo {
   width: 100%;
 }
 
-.form-box-container {
+.formBoxContainer {
   padding: 0px;
   box-shadow: none;
   overflow: unset;
   background-color: var(--white);
 }
 
-.form-top {
+.formTop {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   margin-bottom: 40px;
 }
 
-.form-heading {
+.formHeading {
   font-size: 1.5rem;
 }
 
-.form-bottom {
+.formBottom {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.forgot-link {
+.forgotLink {
   margin: 0px;
   line-height: 1.57143;
   font-size: 0.875rem;
@@ -59,7 +59,7 @@
   align-self: flex-end;
 }
 
-.submit-btn {
+.submitBtn {
   display: flex;
   min-width: 64px;
   padding: 8px 12px 8px 16px;
@@ -73,18 +73,18 @@
   box-shadow: none;
 }
 
-.submit-btn:hover {
+.submitBtn:hover {
   background-color: var(--button-hover-color);
   box-shadow: none;
 }
 
-.btn-icon {
+.btnIcon {
   display: inherit;
   margin-right: -4px;
   margin-left: 8px;
 }
 
-.right-container {
+.rightContainer {
   display: flex;
   flex-direction: column;
   -webkit-box-flex: 1;
@@ -92,7 +92,7 @@
   position: relative;
 }
 
-.right-container-img {
+.rightContainerImg {
   top: 16px;
   left: 16px;
   object-fit: cover;

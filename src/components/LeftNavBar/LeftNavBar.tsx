@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 // Import react Icon
 import { AiOutlineDown, AiOutlineRight } from "react-icons/ai";
@@ -13,39 +13,68 @@ import { LeftMenuItems } from "../../Constants/LeftMenuItems";
 import { GlobalContextData } from "../../context";
 
 // Style
-import "./LeftNavBar.css";
+import "./LeftNavBar.scss";
 
 export const LeftNavBar = () => {
-  const [status, setStatus] = useState<boolean>(true);
   const [menuItems, setMenuItems] = useState([...LeftMenuItems]);
   const { state, dispatch } = useContext(GlobalContextData);
   const location = useLocation();
   const pathName = location.pathname;
+  const navigate = useNavigate();
 
-  const handleOpenMenuItem = (index: number) => {
+  const handleOpenMenuItem = (index: number, openStatus: boolean) => {
     const data = [...menuItems];
-    data[index].openStatus = !data[index].openStatus;
+    data.forEach((item, i) => {
+      item.openStatus = i === index ? !item.openStatus : false;
+    });
     setMenuItems(data);
-    setStatus(data[index].openStatus);
+    if (!openStatus) {
+      if (
+        data[index].child.length > 0 &&
+        data[index].child.every((childitem) => childitem.routeInfo !== pathName)
+      ) {
+        navigate(data[index].child[0].routeInfo);
+      }
+    }
   };
+
+  const handleCloseAllMenus = () => {
+    const data = menuItems.map((item) => ({ ...item, openStatus: false }));
+    setMenuItems(data);
+  };
+
   return (
-    <nav className={`sidebar ${state.openSidebar ? "" : "close"}`}>
-      <header>
+    <nav
+      className={`sidebar ${state.openSidebar ? "" : "close"}`}
+      onMouseLeave={!state.openSidebar ? handleCloseAllMenus : undefined}
+    >
+      <header className="sidebar-header">
         <div className="image-text">
           {state.openSidebar ? (
-            <span className="image img-margin hide-logo">
-              <img src={logo} alt="Logo" height={44} />
+            <span className="image hide-logo">
+              <img
+                src={logo}
+                alt="Logo"
+                height={44}
+                className="sidebar-header-img"
+              />
             </span>
           ) : (
             <span className="image">
               <img
+                className="sidebar-header-img"
                 src="https://demo.smart-school.in/uploads/school_content/admin_small_logo/1.png?1694754095"
                 alt=" Logo"
               />
             </span>
           )}
           <span className="image mobile-view-logo">
-            <img src={logo} alt=" Logo" height={44} />
+            <img
+              src="https://demo.smart-school.in/uploads/school_content/admin_small_logo/1.png?1694754095"
+              alt=" Logo"
+              height={44}
+              className="sidebar-header-img"
+            />
           </span>
         </div>
 
@@ -62,65 +91,103 @@ export const LeftNavBar = () => {
         </div>
       </header>
 
-      <div className="menu-bar">
-        <div className="menu">
-          <ul className="menu-links">
-            <li className="nav-link">
+      <div className={`menu-bar ${state.openSidebar ? "" : "close-menu-bar"}`}>
+        <div>
+          <ul>
+            <li
+              className={`nav-link
+              ${pathName === "/dashboard" ? "parent-box" : ""}
+             ${!state.openSidebar ? "closed-nav-link" : ""}`}
+            >
               <Link
                 to="/dashboard"
-                className={`left-section-text-color ${
-                  pathName === "/dashboard" ? "selected-link" : ""
+                className={`left-section-text-color  ${
+                  !state.openSidebar ? "closed-text" : ""
                 }`}
               >
                 <span
-                  className={`icon${
-                    pathName === "/dashboard" ? " icon selected-icon" : ""
+                  className={`parent-icon${
+                    pathName === "/dashboard"
+                      ? " parent-icon selected-icon"
+                      : ""
                   }`}
                   style={{
                     WebkitMask:
                       'url("https://minimals.cc/assets/icons/navbar/ic_dashboard.svg") center center / contain no-repeat',
                   }}
                 ></span>
-                <span className="text nav-text">Dashboard</span>
+                <span
+                  className={`${
+                    pathName === "/dashboard" ? "parent-box-text" : ""
+                  }`}
+                >
+                  Dashboard
+                </span>
               </Link>
             </li>
-
-            <li className="nav-link">
+            <li
+              className={`nav-link
+              ${pathName === "/e-commerce" ? "parent-box" : ""}
+             ${!state.openSidebar ? "closed-nav-link" : ""}`}
+            >
               <Link
                 to="/e-commerce"
-                className={`left-section-text-color ${
-                  pathName === "/e-commerce" ? "selected-link" : ""
+                className={`left-section-text-color  ${
+                  !state.openSidebar ? "closed-text" : ""
                 }`}
               >
                 <span
-                  className={`icon${
-                    pathName === "/e-commerce" ? " icon selected-icon" : ""
+                  className={`parent-icon${
+                    pathName === "/e-commerce"
+                      ? " parent-icon selected-icon"
+                      : ""
                   }`}
-                  style={{
+                  style={{  
                     WebkitMask:
                       'url("https://minimals.cc/assets/icons/navbar/ic_ecommerce.svg") center center / contain no-repeat',
                   }}
                 ></span>
-                <span className="text nav-text">E-Commerce</span>
+                <span
+                  className={`${
+                    pathName === "/e-commerce" ? "parent-box-text" : ""
+                  }`}
+                >
+                  E-Commerce
+                </span>
               </Link>
             </li>
             {menuItems.map((item, index) => {
-              console.log(item);
+              const isParentSelected = item.child.some(
+                (childitem) => childitem.routeInfo === pathName
+              );
               return (
                 <div key={index + "" + item}>
                   <li
-                    className="nav-link"
-                    onClick={() => handleOpenMenuItem(index)}
+                    className={`nav-link ${
+                      isParentSelected ? "parent-box" : ""
+                    } ${!state.openSidebar ? "closed-nav-link" : ""}`}
+                    onClick={() => {
+                      if (state.openSidebar) {
+                        handleOpenMenuItem(index, false);
+                      }
+                    }}
+                    onMouseEnter={() => {
+                      if (!state.openSidebar) {
+                        handleOpenMenuItem(index, true);
+                      }
+                    }}
                   >
                     <Link
                       to="#"
                       className={`left-section-text-color ${
-                        pathName === "/dashboard"
-                      }`}
+                        isParentSelected ? "parent-box-text" : ""
+                      } ${!state.openSidebar ? "closed-text" : ""}`}
                     >
                       <span
-                        className={`icon${
-                          pathName === "#" ? " icon selected-icon" : ""
+                        className={`${
+                          isParentSelected
+                            ? "parent-icon selected-icon"
+                            : "parent-icon"
                         }`}
                         style={{
                           WebkitMask: `${item.icon}`,
@@ -140,28 +207,32 @@ export const LeftNavBar = () => {
                       </span>
                     </Link>
                   </li>
-
-                  {status && item.openStatus && (
-                    <div className={item.openStatus ? "child-content" : ""}>
+                  {item.openStatus && (
+                    <div className={!state.openSidebar ? "child-content" : ""}>
                       {item.child.map((childitem, index) => {
                         return (
-                          <li className="nav-link" key={index + "" + childitem}>
+                          <li
+                            className="nav-link-child"
+                            key={index + "" + childitem}
+                          >
                             <Link
                               to={childitem.routeInfo}
-                              className={`left-section-text-color ${
-                                pathName === `${childitem.routeInfo}`
-                                  ? "selected-link"
-                                  : ""
-                              }`}
+                              className={"nav-link-child"}
                             >
                               <PiDotOutlineFill
-                                className={`child-icon${
-                                  pathName === "/dashboard"
-                                    ? " child-icon selected-icon"
+                                className={`child-icon ${
+                                  childitem.routeInfo === pathName
+                                    ? "child-select-icon"
                                     : ""
                                 }`}
                               />
-                              <span className="child-text">
+                              <span
+                                className={`child-text ${
+                                  childitem.routeInfo === pathName
+                                    ? "child-select-text"
+                                    : ""
+                                }`}
+                              >
                                 {childitem.name}
                               </span>
                             </Link>

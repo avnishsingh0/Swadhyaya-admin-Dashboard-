@@ -3,6 +3,7 @@ $font-color: #1d1d1d;
 
 //custom
 $color-red: #ff0000;
+$color-black:black;
 $color-green: #00ff00;
 $color-blue: #0000ff;
 $color-grey: #f8f9fa;
@@ -23,6 +24,10 @@ $separator-background: #f7fafe;
 $separator-color: #10559a;
 $form-caption-color: rgb(103, 119, 136);
 $curved-background: #f7faff;
+$text-style-color: #cafdf5;
+$button-color: #212b36;
+//Left Navbar Section color
+$left-navbar-color: rgb(235,248,244);
 //Header color scss : Please refer for colors in Header
 $dark-grey: #333333;
 $medium-grey: #636363;
@@ -60,6 +65,10 @@ $primary-color: #2c2c2c;
 $primary-color-light: #f6f5ff;
 $toggle-color: #ddd;
 $text-color: #0d0138;
+$sidebar-border-color:rgba(145, 158, 171, 0.2);
+$toggle-bg-color:rgba(255, 255, 255, 0.48);
+$sidebar-text-color:rgb(99, 115, 129);
+$sub-menu-icon:rgb(0, 167, 111);
 
 /* ====== Transition ====== */
 $tran-03: all 0.2s ease;
@@ -74,7 +83,7 @@ $footer-text: #0d0138;
 $table-header: #000000;
 
 // material ui font family
-$mui-font-family: "Poppins", sans-serif;
+$mui-font-family: Public Sans, sans-serif;
 
 /* ===== Spacing ===== */
 

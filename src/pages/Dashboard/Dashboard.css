@@ -1,5 +1,4 @@
 .dashboard-container{
-    /* margin-top: 15px; */
     padding: 1rem;
 }
 .dashboard-top-section{
@@ -13,12 +12,9 @@
   overflow: hidden;
 }
 
-.dashboard-top-section > :last-child {
-  /* width: 35%; */
-}
+
 .active-card-container {
   display: flex;
-  /* padding: 0.5rem; */
   width: 100%;
   gap: 1rem;
   margin-top: 1rem;
@@ -29,7 +25,15 @@
 .chart-container{
   display: flex;
   width: 100%;
+  margin-top: 1rem;
+  gap: 1rem;
+ 
 }
-/* .chart-container> :first-child{
-  border: 1px solid red;
-} */
+
+.app-area-chart-box{
+  width: 70%; 
+  max-height: 505px;
+  border-radius: 1rem;
+  box-shadow: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
+
+}

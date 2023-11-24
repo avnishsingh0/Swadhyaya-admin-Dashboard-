@@ -1,9 +1,26 @@
 import React from "react";
 import './ActiveCard.scss'
+import ReactApexChart from "react-apexcharts";
+import { ApexOptions } from "apexcharts";
+import theme from "../../theme";
+import { fNumber } from "../../utils/formatNumber";
 const data = [11, 25, 22, 85, 95];
 
 export const ActiveCard = () => {
   const maxDataValue = Math.max(...data);
+  const chartOptions: ApexOptions = {
+    colors: [theme.palette.primary.main],
+    chart: { sparkline: { enabled: true } },
+    plotOptions: { bar: { columnWidth: "68%", borderRadius: 2 } },
+    tooltip: {
+      x: { show: false },
+      y: {
+        formatter: (val: number) => fNumber(val),
+        title: { formatter: () => "" },
+      },
+      marker: { show: false },
+    },
+  };
   return (
     <div className="active-card">
       <div className="card-details">
@@ -36,15 +53,13 @@ export const ActiveCard = () => {
         <h3 className="card-price">18,765</h3>
       </div>
       <div>
-        <div className="vertical-bar-graph">
-          {data.map((value, index) => (
-            <div
-              key={index}
-              className="bar"
-              style={{ height: `${(value / maxDataValue) * 100}%` }}
-            ></div>
-          ))}
-        </div>
+      <ReactApexChart
+        type="bar"
+        series={[{ data: [20, 41, 63, 33, 28, 35, 50, 46, 11, 26] }]}
+        options={chartOptions}  
+        width={60}
+        height={36}
+      />
       </div>
     </div>
   );

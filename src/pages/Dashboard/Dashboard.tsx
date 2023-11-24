@@ -1,11 +1,15 @@
 import React from "react";
 import "./Dashboard.css";
+import { useTheme } from "@mui/material/styles";
+
 import { dashCarousel, downloadData } from "../../db";
 import { Carousel, CircularChart, WelcomeUser } from "../../components";
 import { ActiveCard } from "../../components/ActiveCard";
-import { LineChart } from "../../components/LineChart";
+import { AppAreaInstalled, AppCurrentDownload } from "../../components/app";
 
 export const Dashboard = () => {
+  const theme = useTheme();
+
   return (
     <div className="dashboard-container">
       <div className="dashboard-top-section">
@@ -18,8 +22,12 @@ export const Dashboard = () => {
         <ActiveCard />
       </div>
       <div className="chart-container">
-        <CircularChart data={downloadData} />
-        {/* <LineChart /> */}
+        <div className="circular-chart-box">
+          <AppCurrentDownload />
+        </div>
+        <div className="app-area-chart-box">
+          <AppAreaInstalled />
+        </div>
       </div>
     </div>
   );

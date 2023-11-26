@@ -3,9 +3,10 @@ import "./Dashboard.css";
 import { useTheme } from "@mui/material/styles";
 
 import { dashCarousel, downloadData } from "../../db";
-import { Carousel, CircularChart, WelcomeUser } from "../../components";
+import { Carousel,  WelcomeUser } from "../../components";
 import { ActiveCard } from "../../components/ActiveCard";
-import { AppAreaInstalled, AppCurrentDownload } from "../../components/app";
+import { AppCurrentDownload } from "../../components/Charts/AppCurrentDownload";
+import { AppAreaInstalled } from "../../components/Charts/AppAreaInstalled";
 
 export const Dashboard = () => {
   const theme = useTheme();

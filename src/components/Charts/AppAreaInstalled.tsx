@@ -3,7 +3,7 @@ import { useState } from "react";
 import ReactApexChart from "react-apexcharts";
 // @mui
 import { Card, CardHeader, Box, TextField } from "@mui/material";
-import { BaseOptionChart } from "../chart";
+import { BaseOptionChart } from ".";
 import { ApexOptions } from "apexcharts";
 // components
 

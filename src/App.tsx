@@ -10,7 +10,7 @@ import "./App.css";
 import { GlobalContext } from "./context/GlobalContext";
 import { CategoryScale } from "chart.js";
 import Chart from "chart.js/auto";
-import { ChartStyle } from "./components/chart";
+import { ChartStyle } from "./components/Charts";
 Chart.register(CategoryScale);
 function App() {
   return (

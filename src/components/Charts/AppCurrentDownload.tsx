@@ -4,7 +4,7 @@ import ReactApexChart from "react-apexcharts";
 // @mui
 import { useTheme, styled } from "@mui/material/styles";
 import { Card, CardHeader } from "@mui/material";
-import { BaseOptionChart } from "../chart";
+import { BaseOptionChart } from ".";
 import { fNumber } from "../../utils/formatNumber";
 import { ApexOptions } from "apexcharts";
 
@@ -37,15 +37,15 @@ export const AppCurrentDownload = () => {
 
   const chartOptions = merge(BaseOptionChart(), {
     colors: [
-      theme.palette.primary.light,
-      theme.palette.primary.light,
-      theme.palette.primary.main,
-      theme.palette.primary.dark,
+      "#ff2f30",
+      "#ffc006",
+      "#00b8d9",
+      "#ff5530"
+      
     ],
     labels: ["Mac", "Window", "iOS", "Android"],
     stroke: { colors: [theme.palette.background.paper] },
     legend: { 
-     
       horizontalAlign: "center",
       floating: true,
       },

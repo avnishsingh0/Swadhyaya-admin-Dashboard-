@@ -1,7 +1,4 @@
-// @mui
 import { useTheme } from "@mui/material/styles";
-
-// ----------------------------------------------------------------------
 
 export const BaseOptionChart = () => {
   const theme = useTheme();
@@ -9,30 +6,19 @@ export const BaseOptionChart = () => {
   const LABEL_TOTAL = {
     show: true,
     label: "Total",
-    color: theme.palette.text.secondary,
-    fontSize: theme.typography.subtitle2.fontSize,
-    fontWeight: theme.typography.subtitle2.fontWeight,
-    lineHeight: theme.typography.subtitle2.lineHeight,
+    color: "#8895a0",
+    fontWeight: "500",
   };
 
   const LABEL_VALUE = {
     offsetY: 8,
-    color: theme.palette.text.primary,
-    fontSize: theme.typography.h3.fontSize,
-    fontWeight: theme.typography.h3.fontWeight,
-    lineHeight: theme.typography.h3.lineHeight,
+    color: "#212b36",
+    fontSize: "20px",
+    fontWeight: "bold",
   };
 
   return {
-    // Colors
-    colors: [
-      "#ff2f30",
-      "#ffc006",
-      theme.palette.chart?.blue[0],
-      theme.palette.chart?.violet[0],
-      theme.palette.chart?.green[0],
-      theme.palette.chart?.red[0],
-    ],
+    colors: ["#ff2f30", "#ffc006", "#00b8d9", "#ff5530"],
 
     // Chart
     chart: {
@@ -117,7 +103,6 @@ export const BaseOptionChart = () => {
       itemMargin: { horizontal: 8 },
       labels: { colors: theme.palette.text.primary },
     },
-    
 
     // plotOptions
     plotOptions: {

@@ -1,8 +1,4 @@
-import { ThemeOptions, createTheme } from "@mui/material/styles";
-
-// ... (other imports and interfaces)
-
-// Define the types for your chart colors
+import {  createTheme } from "@mui/material/styles";
 interface ChartColors {
   main: string;
   yellow: string[];
@@ -12,7 +8,6 @@ interface ChartColors {
   red: string[];
 }
 
-// Extend the Palette interface in the '@mui/material/styles' module
 declare module "@mui/material/styles" {
   interface Palette {
     chart: ChartColors;
@@ -22,15 +17,12 @@ declare module "@mui/material/styles" {
   }
 }
 
-// Create your theme
-const theme = createTheme({
+export const theme = createTheme({
   palette: {
     primary: {
       main: "#1976d2",
     },
-    // Other palette colors...
 
-    // Ensure that chart object is defined and contains the blue property
     chart: {
       main: "#ffeb3b",
       yellow: ["#ffeb3b", "#fff59d"],
@@ -40,9 +32,6 @@ const theme = createTheme({
       red: ["#f44336", "#ef9a9a"],
     },
   },
-  typography: {
-    // Your typography settings
-  },
+  
 });
 
-export default theme;

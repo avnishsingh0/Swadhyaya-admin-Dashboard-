@@ -6,8 +6,8 @@ import { ApexOptions } from "apexcharts";
 
 // Internal imports
 import './ActiveCard.scss'
-import theme from "../../theme";
 import { fNumber } from "../../utils/formatNumber";
+import { theme } from "../../theme";
 
 export const ActiveCard = () => {
   const chartOptions: ApexOptions = {

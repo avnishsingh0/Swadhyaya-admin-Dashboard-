@@ -1,6 +1,5 @@
+// Third party
 import { Theme, alpha } from "@mui/material/styles";
-
-// ----------------------------------------------------------------------
 
 function getDirection(value = "bottom") {
   return {
@@ -10,8 +9,6 @@ function getDirection(value = "bottom") {
     left: "to left",
   }[value];
 }
-
-// ----------------------------------------------------------------------
 
 export const cssStyles = (theme: Theme) => {
   return {

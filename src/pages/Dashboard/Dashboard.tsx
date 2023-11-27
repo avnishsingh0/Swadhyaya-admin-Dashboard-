@@ -1,15 +1,17 @@
 import React from "react";
-import "./Dashboard.css";
-import { useTheme } from "@mui/material/styles";
 
-import { dashCarousel, downloadData } from "../../db";
-import { Carousel,  WelcomeUser } from "../../components";
-import { ActiveCard } from "../../components/ActiveCard";
-import { AppCurrentDownload } from "../../components/Charts/AppCurrentDownload";
-import { AppAreaInstalled } from "../../components/Charts/AppAreaInstalled";
+// Internal imports
+import "./Dashboard.css";
+import { dashCarousel } from "../../db";
+import {
+  Carousel,
+  WelcomeUser,
+  ActiveCard,
+  AppAreaInstalled,
+  AppCurrentDownload,
+} from "../../components";
 
 export const Dashboard = () => {
-  const theme = useTheme();
 
   return (
     <div className="dashboard-container">

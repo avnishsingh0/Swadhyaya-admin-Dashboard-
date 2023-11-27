@@ -9,8 +9,6 @@ import './ActiveCard.scss'
 import theme from "../../theme";
 import { fNumber } from "../../utils/formatNumber";
 
-const data = [11, 25, 22, 85, 95];
-
 export const ActiveCard = () => {
   const chartOptions: ApexOptions = {
     colors: [theme.palette.primary.main],

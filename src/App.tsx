@@ -1,28 +1,27 @@
 import { BrowserRouter as Router } from "react-router-dom";
 
 //Third party
+import Chart from "chart.js/auto";
+import { CategoryScale } from "chart.js";
+import ChartStyle from "./components/Charts/ChartStyle";
 
 // Internal imports
 import { ThemeRoutes } from "./routes";
+import { GlobalContext } from "./context/GlobalContext";
 
 //Style
 import "./App.css";
-import { GlobalContext } from "./context/GlobalContext";
-import { CategoryScale } from "chart.js";
-import Chart from "chart.js/auto";
-import ChartStyle from "./components/Charts/ChartStyle";
+
 Chart.register(CategoryScale);
-function App() {
+export const App = () => {
   return (
     <GlobalContext>
       <div className="app-container">
         <Router>
-          <ChartStyle/>
+          <ChartStyle />
           <ThemeRoutes />
         </Router>
       </div>
     </GlobalContext>
   );
-}
-
-export default App;
+};

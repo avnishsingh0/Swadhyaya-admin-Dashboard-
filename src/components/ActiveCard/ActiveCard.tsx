@@ -5,11 +5,17 @@ import ReactApexChart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 
 // Internal imports
-import './ActiveCard.scss'
-import { fNumber } from "../../utils/formatNumber";
+import "./ActiveCard.scss";
 import { theme } from "../../theme";
+import { fNumber } from "../../utils/formatNumber";
+import { ActiveCardProps } from "./ActiveCard.props";
 
-export const ActiveCard = () => {
+export const ActiveCard = ({
+  title,
+  percentChange,
+  cardPrice,
+  seriesData,
+}: ActiveCardProps) => {
   const chartOptions: ApexOptions = {
     colors: [theme.palette.primary.main],
     chart: { sparkline: { enabled: true } },
@@ -26,7 +32,7 @@ export const ActiveCard = () => {
   return (
     <div className="active-card">
       <div className="card-details">
-        <h6 className="card-heading">Total Active Users</h6>
+        <h6 className="card-heading">{title}</h6>
         <div className="percent-box">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -50,18 +56,18 @@ export const ActiveCard = () => {
               ></path>
             </g>
           </svg>
-          <div className="percent-text">+2.6%</div>
+          <div className="percent-text">{percentChange}</div>
         </div>
-        <h3 className="card-price">18,765</h3>
+        <h3 className="card-price">{cardPrice}</h3>
       </div>
       <div>
-      <ReactApexChart
-        type="bar"
-        series={[{ data: [20, 41, 63, 33, 28, 35, 50, 46, 11, 26] }]}
-        options={chartOptions}  
-        width={60}
-        height={36}
-      />
+        <ReactApexChart
+          type="bar"
+          series={[{ data: seriesData }]}
+          options={chartOptions}
+          width={60}
+          height={36}
+        />
       </div>
     </div>
   );

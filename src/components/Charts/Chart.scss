@@ -1,0 +1,25 @@
+.card-header-container {
+  display: flex;
+  justify-content: space-between;
+  .text-field {
+    width: 65px;
+  }
+  padding: 24px 24px 0px;
+  .card-top-header {
+    display: flex;
+    flex-direction: column;
+  }
+  .header {
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.55556;
+  }
+  .sub-header {
+    margin: 4px 0px 0px;
+    line-height: 1.57143;
+    font-size: 0.875rem;
+    font-family: "Public Sans", sans-serif;
+    font-weight: 400;
+    color: rgb(99, 115, 129);
+  }
+}

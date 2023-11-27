@@ -4,10 +4,11 @@ import { useState } from "react";
 import merge from "lodash/merge";
 import { ApexOptions } from "apexcharts";
 import ReactApexChart from "react-apexcharts";
-import { CardHeader, Box, TextField } from "@mui/material";
+import { Box, TextField } from "@mui/material";
 
 // Interal imports
 import { BaseOptionChart } from "./BaseOptionChart";
+import "./Chart.scss";
 
 const CHART_DATA = [
   {
@@ -54,44 +55,45 @@ export const AppAreaInstalled = () => {
 
   return (
     <div>
-      <CardHeader
-        title="Area Installed"
-        subheader="(+43%) than last year"
-        action={
-          <TextField
-            select
-            fullWidth
-            value={seriesData}
-            SelectProps={{ native: true }}
-            onChange={handleChangeSeriesData}
-            sx={{
-              "& fieldset": { border: "0 !important" },
-              "& select": {
-                pl: 1,
-                py: 0.5,
-                pr: "24px !important",
-                typography: "subtitle2",
-              },
-              "& .MuiOutlinedInput-root": {
-                borderRadius: 0.75,
-                bgcolor: "background.neutral",
-              },
-              "& .MuiNativeSelect-icon": {
-                top: 4,
-                right: 0,
-                width: 20,
-                height: 20,
-              },
-            }}
-          >
-            {CHART_DATA.map((option) => (
-              <option key={option.year} value={option.year}>
-                {option.year}
-              </option>
-            ))}
-          </TextField>
-        }
-      />
+      <div className="card-header-container">
+        <div className="card-top-header">
+          <span className="header">Area Installed</span>
+          <span className="sub-header">(+43%) than last year</span>
+        </div>
+        <TextField
+          select
+          fullWidth
+          value={seriesData}
+          SelectProps={{ native: true }}
+          onChange={handleChangeSeriesData}
+          className="text-field"
+          sx={{
+            "& fieldset": { border: "0 !important" },
+            "& select": {
+              pl: 1,
+              py: 0.5,
+              pr: "24px !important",
+              typography: "subtitle2",
+            },
+            "& .MuiOutlinedInput-root": {
+              borderRadius: 0.75,
+              bgcolor: "background.neutral",
+            },
+            "& .MuiNativeSelect-icon": {
+              top: 4,
+              right: 0,
+              width: 20,
+              height: 20,
+            },
+          }}
+        >
+          {CHART_DATA.map((option) => (
+            <option key={option.year} value={option.year}>
+              {option.year}
+            </option>
+          ))}
+        </TextField>
+      </div>
 
       {CHART_DATA.map((item) => (
         <Box key={item.year} sx={{ mt: 3 }} dir="ltr">

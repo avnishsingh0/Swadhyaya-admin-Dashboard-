@@ -1,14 +1,14 @@
+// Third party
 import merge from "lodash/merge";
+import { ApexOptions } from "apexcharts";
 import ReactApexChart from "react-apexcharts";
-
-// @mui
-import { useTheme, styled } from "@mui/material/styles";
 import { Card, CardHeader } from "@mui/material";
+import { useTheme, styled } from "@mui/material/styles";
+
+// Internal imports
 import { BaseOptionChart } from ".";
 import { fNumber } from "../../utils/formatNumber";
-import { ApexOptions } from "apexcharts";
 
-// utils
 const CHART_HEIGHT = 392;
 const LEGEND_HEIGHT = 72;
 
@@ -28,27 +28,19 @@ const ChartWrapperStyle = styled("div")(({ theme }) => ({
   },
 }));
 
-// ----------------------------------------------------------------------
-
 const CHART_DATA = [12244, 53345, 44313, 78343];
 
 export const AppCurrentDownload = () => {
   const theme = useTheme();
 
   const chartOptions = merge(BaseOptionChart(), {
-    colors: [
-      "#ff2f30",
-      "#ffc006",
-      "#00b8d9",
-      "#ff5530"
-      
-    ],
+    colors: ["#ff2f30", "#ffc006", "#00b8d9", "#ff5530"],
     labels: ["Mac", "Window", "iOS", "Android"],
     stroke: { colors: [theme.palette.background.paper] },
-    legend: { 
+    legend: {
       horizontalAlign: "center",
       floating: true,
-      },
+    },
     tooltip: {
       fillSeriesColor: false,
       y: {
@@ -79,7 +71,7 @@ export const AppCurrentDownload = () => {
         },
       },
     },
-  })as ApexOptions;;
+  }) as ApexOptions;
 
   return (
     <Card>

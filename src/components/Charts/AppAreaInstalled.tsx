@@ -1,13 +1,13 @@
-import merge from "lodash/merge";
 import { useState } from "react";
-import ReactApexChart from "react-apexcharts";
-// @mui
-import { Card, CardHeader, Box, TextField } from "@mui/material";
-import { BaseOptionChart } from ".";
-import { ApexOptions } from "apexcharts";
-// components
 
-// ----------------------------------------------------------------------
+// Third party
+import merge from "lodash/merge";
+import { ApexOptions } from "apexcharts";
+import ReactApexChart from "react-apexcharts";
+import { CardHeader, Box, TextField } from "@mui/material";
+
+// Interal imports
+import { BaseOptionChart } from "./BaseOptionChart";
 
 const CHART_DATA = [
   {

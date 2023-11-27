@@ -1,6 +1,5 @@
+// Third party
 import { BiRadioCircle } from "react-icons/bi";
-
-import { FaIoxhost } from "react-icons/fa";
 
 export const LeftMenuItems = [
   {

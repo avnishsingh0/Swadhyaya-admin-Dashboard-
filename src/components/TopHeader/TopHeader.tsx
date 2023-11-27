@@ -1,11 +1,15 @@
 import { useState } from "react";
-// Internal components
-import "./TopHeader.scss";
-import { IoMdNotifications } from "react-icons/io";
+
+// Third party
 import { FiSettings } from "react-icons/fi";
-import { FaRegCircleUser } from "react-icons/fa6";
 import { MdLightMode } from "react-icons/md";
+import { FaRegCircleUser } from "react-icons/fa6";
+import { IoMdNotifications } from "react-icons/io";
+
+// Internal imports
+import "./TopHeader.scss";
 import { Popper } from "../Popper";
+
 export const TopHeader = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const handleOutsideClick = (event: MouseEvent) => {

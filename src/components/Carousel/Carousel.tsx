@@ -1,6 +1,10 @@
-import React, { useState, useContext } from "react";
-import "./Carousel.css"; // Import your CSS file
+import React, { useState, useContext, useEffect } from "react";
+
+// Third party
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+
+// Internal imports
+import "./Carousel.css";
 import { GlobalContextData } from "../../context";
 
 interface CarouselItem {
@@ -18,16 +22,16 @@ interface CarouselProps {
 export const Carousel: React.FC<CarouselProps> = ({ items }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const { state } = useContext(GlobalContextData);
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     // Auto-rotate the carousel every 3000ms
-  //     setActiveIndex((prevIndex) => (prevIndex + 1) % items.length);
-  //   }, 5000);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Auto-rotate the carousel every 3000ms
+      setActiveIndex((prevIndex) => (prevIndex + 1) % items.length);
+    }, 5000);
 
-  //   return () => {
-  //     clearInterval(interval);
-  //   };
-  // }, [items.length]);
+    return () => {
+      clearInterval(interval);
+    };
+  }, [items.length]);
 
   const goToSlide = (index: number) => {
     setActiveIndex(index);
@@ -46,10 +50,9 @@ export const Carousel: React.FC<CarouselProps> = ({ items }) => {
   };
 
   return (
-    
     <div className="carousel-container">
       <div
-      className={state.openSidebar ? "carousel" : "left-side-close-carousel"}
+        className={state.openSidebar ? "carousel" : "left-side-close-carousel"}
         style={{
           backgroundImage: `url(${items[activeIndex].img})`,
         }}

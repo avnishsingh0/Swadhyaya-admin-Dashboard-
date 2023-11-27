@@ -1,13 +1,17 @@
 import React from "react";
-import './ActiveCard.scss'
+
+//Third party
 import ReactApexChart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
+
+// Internal imports
+import './ActiveCard.scss'
 import theme from "../../theme";
 import { fNumber } from "../../utils/formatNumber";
+
 const data = [11, 25, 22, 85, 95];
 
 export const ActiveCard = () => {
-  const maxDataValue = Math.max(...data);
   const chartOptions: ApexOptions = {
     colors: [theme.palette.primary.main],
     chart: { sparkline: { enabled: true } },

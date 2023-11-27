@@ -1,3 +1,4 @@
+// Third party
 import { useTheme } from "@mui/material/styles";
 
 export const BaseOptionChart = () => {
@@ -19,17 +20,13 @@ export const BaseOptionChart = () => {
 
   return {
     colors: ["#ff2f30", "#ffc006", "#00b8d9", "#ff5530"],
-
-    // Chart
     chart: {
       toolbar: { show: false },
       zoom: { enabled: false },
-      // animations: { enabled: false },
+      animations: { enabled: true },
       foreColor: theme.palette.text.disabled,
       fontFamily: theme.typography.fontFamily,
     },
-
-    // States
     states: {
       hover: {
         filter: {
@@ -44,8 +41,6 @@ export const BaseOptionChart = () => {
         },
       },
     },
-
-    // Fill
     fill: {
       opacity: 1,
       gradient: {
@@ -56,62 +51,44 @@ export const BaseOptionChart = () => {
         stops: [0, 100],
       },
     },
-
-    // Datalabels
     dataLabels: { enabled: false },
-
-    // Stroke
     stroke: {
       width: 3,
       curve: "smooth",
       lineCap: "round",
     },
-
-    // Grid
     grid: {
       strokeDashArray: 3,
       borderColor: theme.palette.divider,
     },
-
-    // Xaxis
     xaxis: {
       axisBorder: { show: false },
       axisTicks: { show: false },
     },
-
-    // Markers
     markers: {
       size: 0,
       strokeColors: theme.palette.background.paper,
     },
-
-    // Tooltip
     tooltip: {
       x: {
         show: false,
       },
     },
-
-    // Legend
     legend: {
       show: true,
       fontSize: "14px",
-      position: "bottom", // Change this to one of the specific values
+      position: "bottom",
       horizontalAlign: "center",
       markers: { radius: 2 },
       fontWeight: 400,
       itemMargin: { horizontal: 8 },
       labels: { colors: theme.palette.text.primary },
     },
-
-    // plotOptions
     plotOptions: {
-      // Bar
       bar: {
         columnWidth: "28%",
         borderRadius: 4,
       },
-      // Pie + Donut
       pie: {
         donut: {
           labels: {
@@ -121,7 +98,6 @@ export const BaseOptionChart = () => {
           },
         },
       },
-      // Radialbar
       radialBar: {
         track: {
           strokeWidth: "100%",
@@ -132,7 +108,6 @@ export const BaseOptionChart = () => {
           total: LABEL_TOTAL,
         },
       },
-      // Radar
       radar: {
         polygons: {
           fill: { colors: ["transparent"] },
@@ -140,7 +115,6 @@ export const BaseOptionChart = () => {
           connectorColors: theme.palette.divider,
         },
       },
-      // polarArea
       polarArea: {
         rings: {
           strokeColor: theme.palette.divider,
@@ -150,8 +124,6 @@ export const BaseOptionChart = () => {
         },
       },
     },
-
-    // Responsive
     responsive: [
       {
         // sm

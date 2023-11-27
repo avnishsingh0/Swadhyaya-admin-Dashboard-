@@ -1,6 +1,9 @@
 import React, { useContext } from "react";
+
+// Internal imports
 import "./WelcomeUser.scss";
 import { GlobalContextData } from "../../context";
+
 export const WelcomeUser = () => {
   const { state } = useContext(GlobalContextData);
 

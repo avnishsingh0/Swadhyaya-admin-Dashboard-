@@ -7,7 +7,7 @@ import { PiDotOutlineFill } from "react-icons/pi";
 
 // Internal components & assests
 import logo from "../../resources/swadhyaya-logo.png";
-import { LeftMenuItems } from "../../Constants/LeftMenuItems";
+import { LeftMenuItems } from "../../constants/LeftMenuItems";
 
 // Context
 import { GlobalContextData } from "../../context";

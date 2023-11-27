@@ -1,7 +1,4 @@
-/* active-card */
-
 .active-card {
-//   border: 1px solid red;
   background-color: rgb(255, 255, 255);
   color: rgb(33, 43, 54);
   transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
@@ -51,10 +48,9 @@
   font-size: 2rem;
 }
 
-
 .bar {
   flex: 1;
-  background-color: rgb(255, 48, 48); /* Change the bar color as needed */
+  background-color: rgb(255, 48, 48); 
   margin: 0 2px;
   text-align: center;
   color: #fff;
@@ -62,24 +58,8 @@
   position: relative;
   width: 5px;
   border-radius: 5px 5px 0% 0%;
-  transition: height 0.5s ease; /* Add animation for bar changes */
+  transition: height 0.5s ease; 
 }
 
-.tooltip {
-  position: absolute;
-  top: -30px; /* Adjust the distance above the bar */
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-}
 
-.bar:hover .tooltip {
-  opacity: 1;
-}
+
